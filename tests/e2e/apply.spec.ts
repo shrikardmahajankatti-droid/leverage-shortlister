@@ -1,5 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
-import { neon } from "@neondatabase/serverless";
+import { bypassHeaders, sql, useBypass } from "./helpers";
 import path from "node:path";
 import { readFileSync } from "node:fs";
 
@@ -8,19 +8,7 @@ const stamp = Date.now();
 const email = `e2e+${stamp}@example.com`;
 const name = `E2E Test Student ${stamp}`;
 
-const sql = () => neon(process.env.DATABASE_URL!);
-
-// Vercel preview protection: send the bypass header only to our own origin.
-// Adding it globally breaks the cross-origin Blob upload (CORS preflight).
-const bypass = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
-const bypassHeaders = bypass && process.env.BASE_URL ? { "x-vercel-protection-bypass": bypass } : undefined;
-
-test.beforeEach(async ({ page, baseURL }) => {
-  if (!bypassHeaders) return;
-  await page.route(`${baseURL}/**`, (route) =>
-    route.continue({ headers: { ...route.request().headers(), ...bypassHeaders } }),
-  );
-});
+useBypass();
 
 const pick = (page: Page, group: RegExp | string, option: string) =>
   page.getByRole("group", { name: group }).getByText(option, { exact: true }).click();
