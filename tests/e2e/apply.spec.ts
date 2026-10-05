@@ -41,7 +41,7 @@ test("student completes all 6 steps and the submission is saved", async ({ page 
   await page.getByRole("textbox", { name: "Phone", exact: true }).fill("9000000099");
   await page.getByLabel("Current city").fill("Pune");
   await page.getByLabel("State").fill("Maharashtra");
-  await page.getByLabel("Your coach").selectOption("Counsellor A");
+  await page.getByLabel("Your coach").selectOption("Lakshmi");
   await page.screenshot({ path: `${SHOTS}/step-1-contact.png`, fullPage: true });
   await next(page);
 
@@ -125,7 +125,7 @@ test("student completes all 6 steps and the submission is saved", async ({ page 
   expect(r.student_name).toBe(name);
   expect(r.level).toBe("bachelor");
   expect(r.intake_term).toBe("Fall");
-  expect(r.coach_name).toBe("Counsellor A");
+  expect(r.coach_name).toBe("Lakshmi");
   expect(r.status).toBe("queued");
   expect(r.resume_url).toMatch(/blob\.vercel-storage\.com\/resumes\//);
   expect(r.answers.destinations.countries).toEqual(["USA", "Canada"]);

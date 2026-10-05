@@ -1,5 +1,5 @@
 // Edit this list to match the counselling team. "Other" is always offered in the form.
-export const COACHES = ["Counsellor A", "Counsellor B", "Counsellor C"] as const;
+export const COACHES = ["Lakshmi"] as const;
 
 export const LEVELS = [
   { value: "bachelor", label: "Bachelor's" },

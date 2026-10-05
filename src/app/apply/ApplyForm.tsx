@@ -80,7 +80,7 @@ type Form = {
 };
 
 const EMPTY: Form = {
-  contact: { name: "", email: "", phoneCode: "+91", phone: "", city: "", state: "", country: "India", coach: "", coachOther: "" },
+  contact: { name: "", email: "", phoneCode: "+91", phone: "", city: "", state: "", country: "India", coach: COACHES.length === 1 ? COACHES[0] : "", coachOther: "" },
   program: { level: "", intakeTerm: "", intakeTermOther: "", intakeYear: "" },
   destinations: { countries: [], openToOther: "", reason: "" },
   tests: {
