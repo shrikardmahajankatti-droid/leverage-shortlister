@@ -1,0 +1,59 @@
+{
+  "contact": {
+    "name": "Meera Testkumar",
+    "email": "meera.testkumar@example.com",
+    "phoneCode": "+91",
+    "phone": "9000000002",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "country": "India",
+    "coach": "Other",
+    "coachOther": "Counsellor Z"
+  },
+  "program": { "level": "master", "intakeTerm": "Fall", "intakeTermOther": "", "intakeYear": 2027 },
+  "destinations": {
+    "countries": ["Germany", "Netherlands", "Ireland"],
+    "openToOther": "Yes",
+    "reason": "Lower tuition and post-study work visas"
+  },
+  "tests": {
+    "academicTest": "GRE",
+    "academicStatus": "planned",
+    "academicScore": "",
+    "academicSections": "Target 320 (mock 312)",
+    "englishTest": "TOEFL",
+    "englishStatus": "planned",
+    "englishOverall": "",
+    "englishSections": "",
+    "englishPlannedDate": "2026-12"
+  },
+  "academics": {
+    "institution": "Example Institute of Technology",
+    "curriculum": "Other",
+    "curriculumOther": "B.Tech (university)",
+    "subjects": "",
+    "grades": "",
+    "degree": "B.Tech",
+    "specialisation": "Electronics and Communication",
+    "cgpa": "8.4",
+    "cgpaScale": "10",
+    "completionDate": "2026-06",
+    "backlogs": "No",
+    "backlogsReason": "",
+    "stem": "Yes",
+    "apExams": ""
+  },
+  "goals": {
+    "desiredUniversities": "TU Delft - MSc Embedded Systems",
+    "alternativePrograms": "MSc Electrical Engineering, MSc Robotics",
+    "funding": "Loan",
+    "budgetBand": "15-25",
+    "postStudyPlans": "Stay and work in Europe",
+    "workYears": "1",
+    "workRoles": "Embedded software intern; Junior firmware engineer",
+    "awards": "",
+    "passport": "Yes",
+    "resumeUrl": "",
+    "remarks": "Prefers English-taught programs"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "contact": {
+    "name": "Aarav Testpatel",
+    "email": "aarav.testpatel@example.com",
+    "phoneCode": "+91",
+    "phone": "9000000001",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "country": "India",
+    "coach": "Lakshmi",
+    "coachOther": ""
+  },
+  "program": { "level": "bachelor", "intakeTerm": "Fall", "intakeTermOther": "", "intakeYear": 2027 },
+  "destinations": {
+    "countries": ["USA", "Canada", "UK"],
+    "openToOther": "Maybe",
+    "reason": "Strong CS programs and co-op options"
+  },
+  "tests": {
+    "academicTest": "SAT",
+    "academicStatus": "taken",
+    "academicScore": "1450",
+    "academicSections": "Math 760, EBRW 690",
+    "englishTest": "IELTS",
+    "englishStatus": "taken",
+    "englishOverall": "7.0",
+    "englishSections": "L 7.5, R 7.0, W 6.5, S 7.0",
+    "englishPlannedDate": ""
+  },
+  "academics": {
+    "institution": "Example Public School, Pune",
+    "curriculum": "CBSE",
+    "curriculumOther": "",
+    "subjects": "Physics, Chemistry, Mathematics, Computer Science, English",
+    "grades": "Class 10: 94%; Class 12 predicted: 92%",
+    "degree": "",
+    "specialisation": "",
+    "cgpa": "",
+    "cgpaScale": "",
+    "completionDate": "2027-03",
+    "backlogs": "No",
+    "backlogsReason": "",
+    "stem": "Yes",
+    "apExams": "AP Calculus BC: 5"
+  },
+  "goals": {
+    "desiredUniversities": "University of Toronto - Computer Science; University of Illinois Urbana-Champaign - CS",
+    "alternativePrograms": "Data Science, Computer Engineering",
+    "funding": "Mix",
+    "budgetBand": "25-40",
+    "postStudyPlans": "Work in software for 2-3 years, then return to India",
+    "workYears": "",
+    "workRoles": "",
+    "awards": "National Science Olympiad finalist",
+    "passport": "Yes",
+    "resumeUrl": "",
+    "remarks": ""
+  }
+}
