@@ -10,6 +10,18 @@ const name = `E2E Test Student ${stamp}`;
 
 const sql = () => neon(process.env.DATABASE_URL!);
 
+// Vercel preview protection: send the bypass header only to our own origin.
+// Adding it globally breaks the cross-origin Blob upload (CORS preflight).
+const bypass = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+const bypassHeaders = bypass && process.env.BASE_URL ? { "x-vercel-protection-bypass": bypass } : undefined;
+
+test.beforeEach(async ({ page, baseURL }) => {
+  if (!bypassHeaders) return;
+  await page.route(`${baseURL}/**`, (route) =>
+    route.continue({ headers: { ...route.request().headers(), ...bypassHeaders } }),
+  );
+});
+
 const pick = (page: Page, group: RegExp | string, option: string) =>
   page.getByRole("group", { name: group }).getByText(option, { exact: true }).click();
 
@@ -135,6 +147,7 @@ test("honeypot submissions are accepted silently but not stored", async ({ reque
   const hpEmail = `hp+${stamp}@example.com`;
   const fixture = JSON.parse(readFileSync(path.join(__dirname, "../fixtures/student-bachelor.json"), "utf8"));
   const res = await request.post("/api/submissions", {
+    headers: bypassHeaders,
     data: { answers: { ...fixture, contact: { ...fixture.contact, email: hpEmail } }, website: "spam.example" },
   });
   expect(res.status()).toBe(201);
@@ -143,6 +156,9 @@ test("honeypot submissions are accepted silently but not stored", async ({ reque
 });
 
 test("invalid payload is rejected with 400", async ({ request }) => {
-  const res = await request.post("/api/submissions", { data: { answers: { contact: {} } } });
+  const res = await request.post("/api/submissions", {
+    headers: bypassHeaders,
+    data: { answers: { contact: {} } },
+  });
   expect(res.status()).toBe(400);
 });
